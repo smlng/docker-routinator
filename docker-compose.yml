@@ -1,0 +1,11 @@
+version: '3.4'
+services:
+  routinator:
+    build: .
+    image: routinator
+    ports:
+      - 3323:3323
+    volumes:
+      - ./tals/arin-rfc7730.tal:/opt/docker/.rpki-cache/tals/arin.tal
+    user: rpki
+    restart: always
